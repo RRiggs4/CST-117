@@ -1,0 +1,175 @@
+//Richard Riggs
+//This is my own work 
+//1.21.18
+//CST-117
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SimpleCalculator
+{
+    public partial class Form1 : Form
+    {
+        string input = string.Empty;
+        string operation1 = string.Empty;
+        string operation2 = string.Empty;
+        char operation;
+        double result = 0.0; 
+
+
+        public Form1()
+        {
+            InitializeComponent();
+            textBox1.Text = "0";
+        }
+
+        private void zero_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "0";
+            this.textBox1.Text += input;
+        }
+
+        private void dot_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + ".";
+            this.textBox1.Text += input;
+        }
+
+        private void one_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "1";
+            this.textBox1.Text += input;
+        }
+
+        private void two_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "2";
+            this.textBox1.Text += input;
+        }
+
+        private void three_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "3";
+            this.textBox1.Text += input;
+        }
+
+        private void four_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "4";
+            this.textBox1.Text += input;
+        }
+
+        private void five_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "5";
+            this.textBox1.Text += input;
+        }
+
+        private void six_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "6";
+            this.textBox1.Text += input;
+        }
+
+        private void seven_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "7";
+            this.textBox1.Text += input;
+        }
+
+        private void eight_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "8";
+            this.textBox1.Text += input;
+        }
+
+        private void nine_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "";
+            input = input + "9";
+            this.textBox1.Text += input;
+        }
+
+        private void plus_Click(object sender, EventArgs e)
+        {
+            operation1 = input;
+            operation = '+';
+            input = string.Empty;
+        }
+
+        private void minus_Click(object sender, EventArgs e)
+        {
+            operation1 = input;
+            operation = '-';
+            input = string.Empty;
+        }
+
+        private void multiply_Click(object sender, EventArgs e)
+        {
+            operation1 = input;
+            operation = '*';
+            input = string.Empty;
+        }
+
+        private void divide_Click(object sender, EventArgs e)
+        {
+            operation1 = input;
+            operation = '/';
+            input = string.Empty;
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = "0";
+            this.input = string.Empty;
+            this.operation1 = string.Empty;
+            this.operation2 = string.Empty;
+        }
+        private void equals_Click(object sender, EventArgs e)
+        {
+            operation2 = input;
+            double num1, num2;
+            double.TryParse(operation1, out num1);
+            double.TryParse(operation2, out num2);
+
+            if (operation == '+')
+            {
+                result = num1 + num2;
+                textBox1.Text = result.ToString();
+            }
+            else if (operation == '-')
+            {
+                result = num1 - num2;
+                textBox1.Text = result.ToString();
+            }
+            else if (operation == '*')
+            {
+                result = num1 * num2;
+                textBox1.Text = result.ToString();
+            }
+            else if (operation == '/')
+            {
+                result = num1 / num2;
+                textBox1.Text = result.ToString();
+            }
+
+        }
+    }
+}
